@@ -144,6 +144,9 @@ var Brain = function(kwargs) {
 	}
 
 	this.loadBrain = function(kwargs) {
+
+setTimeout(function() {
+
 		kwargs = kwargs || {};
 		_this.manifest_url = (kwargs.manifest_url || _this.manifest_url) + '?' + (new Date())
 		_this.data_url = (kwargs.data_url || _this.data_url)
@@ -229,6 +232,8 @@ var Brain = function(kwargs) {
 				}
 			}
 		});
+
+}, 2000);
 		
 	};
 
