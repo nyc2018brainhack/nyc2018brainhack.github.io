@@ -263,20 +263,21 @@ var Brain = function(kwargs) {
 	}
 
 	//controls
-/*	this.addControls = function(camera){
+	this.addControls = function(camera){
 		controls = new THREE.TrackballControls( camera, this.container );
 
 		controls.rotateSpeed = 5.0;
 		controls.zoomSpeed = 5;
 		controls.panSpeed = 2;
 
-		controls.noZoom = false;
+	//	controls.noZoom = false;
+		controls.noZoom = true;
 		controls.noPan = false;
 
 		controls.staticMoving = true;
 		controls.dynamicDampingFactor = 0.3;
 		return controls
-	} */
+	} 
 
 	this.loadMesh = function(url, mesh_props) {
 		var name_found = Object.keys(_this.meshes).reduce(function(c, k) {
