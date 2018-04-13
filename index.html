@@ -18,7 +18,11 @@
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+
+  <!--  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+<!--    <link href="css/font-awesome.min.css" rel="stylesheet"> -->
     <!-- <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> -->
     <link href='https://fonts.googleapis.com/css?family=Comfortaa:700' rel='stylesheet' type='text/css'>
 
@@ -28,6 +32,68 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+    /* ROYGBIV */
+#masthead{
+    height: 100%;
+}
+#nav-brain{
+    z-index: -1;
+    width: 100%;
+    height: 700px;
+    max-width: 1000px; 
+    margin-top: 0px;
+    margin-right: 0px;
+    position: absolute;
+    opacity: 0;
+}
+#nav-brain:after {content:'';position:absolute;z-index:999;top:0;left:0;width:100%;height:100%; /*cursor: not-allowed;    pointer-events: none*/}
+#header_n_label {
+    float: left;
+    left: 0px;
+    margin: auto;
+    text-align: center;
+    color: black;
+}
+#nav_label {
+   /* background-color: #ffffff; */
+    opacity: 0.8;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.6rem;
+    color: black;
+}
+#ng-app-navigator{
+    position: absolute;
+    z-index: 2;
+}
+.header::after {
+  content: "";
+  background: url(img/nyc_sky.png) no-repeat center center scroll;
+  background-size: cover;
+  opacity: 1;
+      -webkit-transition: opacity 2.5s linear;
+    -moz-transition: opacity 2.5s linear;
+    transition: opacity 2.5s linear;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+.header.hasback::after{
+	opacity:0;
+}
+.header{
+	background-image: none;
+}
+
+/* fix overflow and horizontal scroll */
+.text-vertical-center{
+	overflow-x: hidden;
+}
+</style>
 
 </head>
 
@@ -61,7 +127,24 @@
 
     <!-- Header -->
     <header id="top" class="header">
+
+
+
+<!-- CRUDE INSERT OF ROYGBIV -->
+			<div id="ng-app-navigator" ng-app="navigator" ng-controller="NavigateController" ng-strict-di>
+
+		<!--	<div id="header_n_label"> -->
+				<div id="nav_label"></div>
+			<!--	<div id="plot-canvas" style="width: 0px; height: 0px;"> </div> -->
+		<!--	</div>  -->
+
+			</div>
+		<div id="nav-brain"></div>
+
+
+
         <div class="text-vertical-center text-center">
+
         	<div style="background-color:rgba(51, 122, 183, 0.7)"><br>
             <h1>BrainHack Global NYC 2018</h1>
 			<div class="row">
@@ -122,7 +205,7 @@
                         <div class="service-item">
                             <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-gears  fa-stack-1x text-primary"></i>
+                            <i class="fa fa-cogs  fa-stack-1x text-primary"></i>
                         </span>
                             <h4>
                                 <strong>Build Projects</strong>
@@ -134,7 +217,7 @@
                         <div class="service-item">
                             <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-wechat fa-stack-1x text-primary"></i>
+                            <i class="fa fa-users fa-stack-1x text-primary"></i>
                         </span>
                             <h4>
                                 <strong>Meet the Community</strong>
@@ -451,7 +534,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h3><strong>For more information:</strong></h3>
-                    <i class="fa fa-envelope-o fa-fw"></i>
+                    <i class="fa far fa-envelope fa-fw"></i> 
                     steven.giavasis at childmind.org
                     <br>
                     <br>
@@ -518,6 +601,75 @@
 	});
 	
     </script>
+
+
+<!-- ARNO'S ROYGBIV IS MAST -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script>$("html,body").scrollTop(0);</script>
+		
+		<script src="js/roygbiv/libs/three.min.js"></script>
+		<script src="js/roygbiv/libs/Projector.js"></script>
+		<script src="js/roygbiv/libs/Detector.js"></script>
+		<script src="js/roygbiv/libs/TrackballControls.js"></script>
+		<script src="js/roygbiv/libs/VTKLoader.js"></script>
+
+		<script src="js/roygbiv/libs/jquery.min.js"></script>
+		<script src="js/roygbiv/libs/d3.min.js"></script>
+        <script src="js/roygbiv/libs/box.js"></script>
+        <script src="js/roygbiv/libs/sprintf.js"></script>
+		<script src="js/roygbiv/libs/angular.min.js"></script>
+
+        <script src="js/roygbiv/brain.utils.js"></script>
+        <script src="js/roygbiv/brain.js"></script>
+		<script src="js/roygbiv/boxplot.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+		<script src="js/roygbiv/smooth-scroll.js"></script>
+
+		<script>
+			if($( window ).width() > 1000){
+				//brain
+				angular.module('navigator', [])
+				.controller('NavigateController', ['$scope', function($scope) {
+	                $scope.brain = new Brain({
+	                    divID: "nav-brain",  		/* div to render brain */
+	                    callback: function(mesh) {
+	                        		/* callback when a mesh is selected/deselected */
+	                        if (!mesh) {
+	                            	/* deselected: clear label & plot */
+	                            $scope.selectedLabel = "";
+	                          		/*  $('#plot-canvas').empty(); */
+	                        } else {
+	                            	/* selected: add label, do plot. */
+	                            $scope.selectedLabel = mesh.name;
+	                            console.log("label in angular module: " + mesh.name);
+	                            $("#nav_label").html(mesh.name);
+	                         /* 	do_boxplot("plot-canvas", mesh); */
+	                        }
+	                        $scope.$apply();
+	                    },
+	                    manifest_url: 'assets/data/lh_files_to_load_short.json',
+	                    label_mapper: 'assets/data/labels.json'
+	                });
+				}]);
+
+				//fade in after load
+				setTimeout(function(){ 
+					var brainMargin = ( $(window).width() - $("canvas").width() ) / 2;
+					$("canvas").css( "margin-left", brainMargin + "px" );
+
+					$( "#nav-brain" )
+					    .css({opacity:0})
+					    .animate({opacity:1}, 2000, null, 
+					    function() { 
+					    	this.style.opacity=1;
+					    	$('.header').toggleClass('hasback'); 
+					    }); 
+
+				}, 5000);
+			}
+		</script>
 
 </body>
 
