@@ -620,7 +620,7 @@
 
 		<script>
 			if($( window ).width() > 1000){
-				setTimeout(function(){ 
+				$( document ).ready(function() {
 				//brain
 				angular.module('navigator', [])
 				.controller('NavigateController', ['$scope', function($scope) {
@@ -659,10 +659,8 @@
 					    	$('.header').toggleClass('hasback'); 
 					    }); 
 
-					}, 5000);
-
-
-			}, 100);
+				}, 5000);
+				}); 
 			}
 		</script>
 
