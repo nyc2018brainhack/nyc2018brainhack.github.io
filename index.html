@@ -66,7 +66,11 @@
 .header::after {
   content: "";
   background: url(img/nyc_sky.png) no-repeat center center scroll;
+  background-size: cover;
   opacity: 1;
+      -webkit-transition: opacity 2.5s linear;
+    -moz-transition: opacity 2.5s linear;
+    transition: opacity 2.5s linear;
   top: 0;
   left: 0;
   bottom: 0;
