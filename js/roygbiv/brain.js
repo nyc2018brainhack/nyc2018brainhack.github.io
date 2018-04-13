@@ -90,7 +90,7 @@ var Brain = function(kwargs) {
 
 
 
-		// CURT ADDS ROTATING MESH SELECTION
+		//ADDS ROTATING MESH SELECTION
 		setInterval(function(){ 
 		//	mesh = _this.selectMeshByRandom();
 			mesh = _this.selectMeshByRandomBest();
@@ -99,7 +99,7 @@ var Brain = function(kwargs) {
 
 		// Interactive things - resizing windows, animate to rotate/zoom
 		window.addEventListener( 'resize', function(){ _this.onWindowResize(); }, false );
-		this.container.addEventListener('click', function(e) {
+	/*	this.container.addEventListener('click', function(e) {
 			if (!e.shiftKey)
 				return false;
 
@@ -113,7 +113,7 @@ var Brain = function(kwargs) {
 
 			mesh = _this.selectMeshByMouse(e);
 			_this.objectPick(mesh);
-		})
+		}) */
 	};
 
 	this.removeMesh = function(mesh) {
@@ -263,7 +263,7 @@ var Brain = function(kwargs) {
 	}
 
 	//controls
-	this.addControls = function(camera){
+/*	this.addControls = function(camera){
 		controls = new THREE.TrackballControls( camera, this.container );
 
 		controls.rotateSpeed = 5.0;
@@ -276,7 +276,7 @@ var Brain = function(kwargs) {
 		controls.staticMoving = true;
 		controls.dynamicDampingFactor = 0.3;
 		return controls
-	}
+	} */
 
 	this.loadMesh = function(url, mesh_props) {
 		var name_found = Object.keys(_this.meshes).reduce(function(c, k) {
