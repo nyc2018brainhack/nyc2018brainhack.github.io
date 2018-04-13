@@ -65,7 +65,7 @@
 }
 .header::after {
   content: "";
-  background: url(../img/nyc_sky.png) no-repeat center center scroll;
+  background-image: url(../img/nyc_sky.png) no-repeat center center scroll;
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -641,6 +641,9 @@
 
 				//fade in after load
 				setTimeout(function(){ 
+					var brainMargin = ( $(window).width() - $("canvas").width() ) / 2;
+					$("canvas").css( "margin-left", brainMargin + "px" );
+
 					$( "#nav-brain" )
 					    .css({opacity:0})
 					    .animate({opacity:1}, 2000, null, 
